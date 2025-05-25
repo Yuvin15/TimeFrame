@@ -64,7 +64,9 @@ public class ObjPickup : MonoBehaviour
         currentObject.parent = cameraTrans;
         currentObject.localPosition = new Vector3(0f, 0f, 2f);
         currentRigidbody.useGravity = false;
+        currentRigidbody.isKinematic = true;
         currentRigidbody.linearVelocity = Vector3.zero;
+        currentRigidbody.angularVelocity = Vector3.zero;
         pickedUp = true;
     }
 
@@ -72,6 +74,7 @@ public class ObjPickup : MonoBehaviour
     {
         currentObject.parent = null;
         currentRigidbody.useGravity = true;
+        currentRigidbody.isKinematic = false;
         pickedUp = false;
         ResetCrosshair();
     }
@@ -80,6 +83,7 @@ public class ObjPickup : MonoBehaviour
     {
         currentObject.parent = null;
         currentRigidbody.useGravity = true;
+        currentRigidbody.isKinematic = false;
         currentRigidbody.linearVelocity = cameraTrans.forward * throwAmount;
         pickedUp = false;
         ResetCrosshair();
