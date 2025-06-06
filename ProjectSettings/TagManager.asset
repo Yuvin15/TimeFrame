@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - ThrowObjects
+  - Mirror
   layers:
   - Default
   - TransparentFX

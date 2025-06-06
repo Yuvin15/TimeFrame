@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Assets\objPickup.cs" />
     <Compile Include="Assets\Assets\Movement.cs" />
+    <Compile Include="Assets\Assets\Lasar.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Assets\RespawnObject.cs" />
     <Compile Include="Assets\Assets\OpenDoor.cs" />

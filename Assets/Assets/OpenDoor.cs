@@ -18,7 +18,7 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("Open Door");
                 transform.position = new Vector3(0, 10, 14);
 
-                CloseDoorAuto(timerToClose);
+                //CloseDoorAuto(timerToClose);
             }
         }
     }

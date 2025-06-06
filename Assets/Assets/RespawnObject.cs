@@ -16,8 +16,13 @@ public class RespawnObject : MonoBehaviour
     {
         if(transform.position.y < -10f) 
         {
+            
             Debug.Log("Fell to -10");
-            transform.position = respawnPosition;
+            //transform.position = respawnPosition;
+
+            Vector3 pos = transform.position;
+            pos.y = 1;
+            transform.position = pos;
         }
         else 
         {
