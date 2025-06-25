@@ -24,9 +24,5 @@ public class RespawnObject : MonoBehaviour
             pos.y = 1;
             transform.position = pos;
         }
-        else 
-        {
-            Debug.Log("No problem");
-        }
     }
 }

@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
     [SerializeField] private float maxDistance = 300f;
     [SerializeField] private LayerMask reflectiveLayers = -1; // What layers can reflect the laser
     [SerializeField] private bool onlyReflectMirrors = false; // Only reflect off objects tagged "Mirror"
+    [SerializeField] private bool startState = false;
 
     private LineRenderer lineRenderer;
 
@@ -24,7 +25,10 @@ public class Laser : MonoBehaviour
 
     void Update()
     {
-        CastLaser();
+        if (startState == true) 
+        {
+            CastLaser();
+        }
     }
 
     void CastLaser()
@@ -54,6 +58,13 @@ public class Laser : MonoBehaviour
                 lineRenderer.SetPosition(actualPositions, hit.point);
                 actualPositions++;
 
+
+                if (hit.collider.CompareTag("LaserEnd"))
+                {
+                    Debug.Log("Reached the laser end");
+                    break;
+                }
+
                 // Check if we should stop bouncing
                 if (onlyReflectMirrors && !hit.collider.CompareTag("Mirror"))
                 {
@@ -75,9 +86,12 @@ public class Laser : MonoBehaviour
                 actualPositions++;
                 break;
             }
+
         }
 
         // Set the actual position count to only show the used points
         lineRenderer.positionCount = actualPositions;
+
+
     }
 }

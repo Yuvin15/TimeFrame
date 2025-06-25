@@ -18,14 +18,12 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("Open Door");
                 transform.position = new Vector3(0, 10, 14);
 
-                //CloseDoorAuto(timerToClose);
             }
         }
     }
 
-    private void CloseDoorAuto(int time)
+    public void CloseDoor()
     {
-        closeDoor = true;
         transform.position = new Vector3(0, 4, 14);
     }
 }
