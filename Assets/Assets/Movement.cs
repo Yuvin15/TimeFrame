@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float runSpeed = 8.0f;
     public float jumpForce = 5.0f;
     public float gravity = 20.0f;
+    public int health = 100;
 
     [Header("Look Settings")]
     public float lookSensitivity = 2.0f;
@@ -20,6 +21,7 @@ public class Movement : MonoBehaviour
 
     private float jumpCooldown = 0f;
     private float jumpCooldownDuration = 0.1f;
+
 
     void Start()
     {
